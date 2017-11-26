@@ -1,0 +1,30 @@
+{
+  "name": "market-api",
+  "version": "1.0.0",
+  "description": "FML",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jparr721/market-api.git"
+  },
+  "author": "Jarred Parr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jparr721/market-api/issues"
+  },
+  "homepage": "https://github.com/jparr721/market-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "firebase": "^4.6.2",
+    "firebase-admin": "^5.5.1",
+    "helmet": "^3.9.0",
+    "path": "^0.12.7"
+  }
+}
