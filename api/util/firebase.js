@@ -56,7 +56,7 @@ exports.createUser = (uuid, name, email) => {
 exports.exists = (uuid) => {
 	return new Promise((resolve, reject) => {
 		exports.database.ref('users/' + uuid).once('value').then((snapshot) => {
-			if (snapshot.val() && (snapshot.val().name || snapshot.val().items)) {
+			if (snapshot.val() && (snapshot.val().name || snapshot.val().postings)) {
 				resolve(true);
 			} else {
 				resolve(false);
