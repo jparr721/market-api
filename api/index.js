@@ -6,6 +6,9 @@ let cors = require('cors');
 let helmet = require('helmet');
 let compression = require('compression');
 
+let post = require('./routes/postings');
+let user = require('./routes/users');
+
 // Declare express
 const app = express();
 
@@ -23,6 +26,8 @@ app.use((req, res, next) => {
 });
 
 /** API ROUTES **/
+app.use('/post', post);
+app.use('/users', user);
 app.use("/api", (req, res) => {
 	res.send("Hello world I am not broken");
 	return;;
