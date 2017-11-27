@@ -29,3 +29,15 @@ router.get('/:id/exists', (req, res) => {
 		return;
 	});
 });
+
+router.get('/:id/posts', (req, res) => {
+	firebase.read('users/' + req.params.id + '/posts').then((data) => {
+		res.send(data);
+		return;
+	}, (err) => {
+		res.status(503).send(errorHandler.errorJSON(req.originalUrl, err, "Error connecting to server."));
+		return;
+	});
+});
+
+module.exports = router;
