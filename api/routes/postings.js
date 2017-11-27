@@ -24,6 +24,10 @@ router.post('/create', (req, res) => {
 	}
 });
 
+router.get('/test', (rew, res) => {
+	res.send('I am functional');
+})
+
 router.post('/:post_id', (req, res) => {
 	firebase.read('posts/' + req.params.post_id).then((data) => {
 		res.send(data);

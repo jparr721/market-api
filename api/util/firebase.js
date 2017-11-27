@@ -32,7 +32,7 @@ exports.read = (url) => {
 exports.delete = (url) => {
 	return new Promise((resolve, reject) => {
 		exports.database.ref(url).once('value').then((snapshot) => {
-			resolve(remove(snapshot.val());
+			resolve(remove(snapshot.val()));
 		}, (err) => {
 			reject(err);
 		});

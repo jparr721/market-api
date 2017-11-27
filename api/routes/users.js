@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let firebase = require('../util/firebase');
-let errorHandler = require('./util/errorHandler');
+let errorHandler = require('../util/errorHandler');
 
 router.post('/create', (req, res) => {
 	if (req.body.id) {

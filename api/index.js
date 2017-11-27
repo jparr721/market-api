@@ -30,7 +30,7 @@ app.use('/post', post);
 app.use('/users', user);
 app.use("/api", (req, res) => {
 	res.send("Hello world I am not broken");
-	return;;
+	return;
 });
 
 let port = process.env.PORT || '8080';
