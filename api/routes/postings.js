@@ -5,7 +5,7 @@ let errorHandler = require('../util/errorHandler');
 
 router.post('/create', (req, res) => {
 	if (req.body.post_id && req.body.user_id) {
-		firebase.write('users/' + req.body.user_id + '/postings/' + req.body.post_id, {
+		firebase.write('users/' + req.body.user_id + '/posts/' + req.body.post_id, {
 			id: req.body.post_id,
 			title: req.body.title,
 			price: req.body.price,
@@ -26,7 +26,7 @@ router.post('/create', (req, res) => {
 
 router.get('/test', (rew, res) => {
 	res.send('I am functional');
-})
+});
 
 router.post('/:post_id', (req, res) => {
 	firebase.read('posts/' + req.params.post_id).then((data) => {
