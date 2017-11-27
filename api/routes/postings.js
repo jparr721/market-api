@@ -34,4 +34,24 @@ router.post('/:post_id', (req, res) => {
 	});
 });
 
+router.get('/:post_id', (req, res) => {
+	firebase.read('posts/' + req.params.post_id).then((data) => {
+		res.send(data);
+		return;
+	}, (err) => {
+		res.status(503).send(errorHandler.errorJSON(req.originalUrl, err, "Error connecting to server."));
+		return;
+	});
+});
+
+router.delete('/:post_id', (req, res) => {
+	firebase.delete('posts/' + req.params.post_id).then((data) => {
+		res.send(data);
+		return;
+	}, (err) => {
+		res.status(503).send(errorHandler.errorJSON(req.originalUrl, err, "Error connecting to server."));
+		return;
+	});
+});
+
 module.exports = router;
